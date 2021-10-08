@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Grid LKS</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            box-sizing: border-box;
+        }
+
+        .container {
+            margin: 50px auto;
+            width: 600px;
+            display: grid;
+            grid-gap: 5px;
+            grid-template-areas: "site site nav1 nav2 nav2 nav3"
+                "postTitle postTitle postTitle postTitle sidebar sidebar"
+                "postMeta mainContent mainContent mainContent sidebar sidebar"
+                "postMeta mainContent mainContent mainContent ads ads"
+                "postMeta mainImage mainImage mainImage ads ads"
+                "postMeta mainImage mainImage mainImage other other"
+                "footer footer footer footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr .7fr .3fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr 1fr 2fr 1fr;
+        }
+
+        .container>* {
+            display: flex;
+            padding: 25px 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .site {
+            grid-area: site;
+            background-color: rgb(236, 189, 32);
+        }
+
+        .nav1 {
+            grid-area: nav1;
+        }
+
+        .nav2 {
+            grid-area: nav2;
+        }
+
+        .nav3 {
+            grid-area: nav3;
+        }
+
+
+        .nav1,
+        .nav2,
+        .nav3 {
+            background-color: rgb(233, 33, 223);
+        }
+
+        .postTitle {
+            grid-area: postTitle;
+            background-color: rgb(33, 153, 233);
+        }
+
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(233, 213, 33);
+        }
+
+        .postMeta {
+            grid-area: postMeta;
+            background-color: rgb(33, 226, 233);
+        }
+
+        .mainContent {
+            grid-area: mainContent;
+            background-color: rgb(88, 92, 128);
+        }
+
+        .mainImage {
+            grid-area: mainImage;
+            background-color: rgb(215, 253, 0);
+        }
+
+        .ads {
+            grid-area: ads;
+            background-color: rgb(47, 194, 10);
+        }
+
+        .other {
+            grid-area: other;
+            background-color: rgb(74, 10, 194);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(98, 101, 116);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="site">site</div>
+        <nav class="nav1">nav1</nav>
+        <nav class="nav2">nav2</nav>
+        <nav class="nav3">nav3</nav>
+        <div class="postTitle">post title</div>
+        <div class="sidebar">sidebar</div>
+        <div class="postMeta">post meta</div>
+        <div class="mainContent">main content</div>
+        <div class="ads">ads</div>
+        <div class="mainImage">main image</div>
+        <div class="other">other staff</div>
+        <footer>footer</footer>
+    </div>
+
+</body>
+
+</html>

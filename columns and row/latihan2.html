@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 1 | Explicit & Implicit Grid</title>
+    <title>Latihan 1 | Explicit(terdifinisi ukurannya) & Implicit Grid(tidak terdifinisi ukurannya)</title>
     <style>
         body {
             margin: 0;
@@ -17,8 +17,16 @@
             width: 60%;
             margin: 50px auto;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 300px;
+            grid-template-columns: 10px 50px;
+            grid-template-rows: 50px 100px 100px;
+
+            /*untuk mengatur div yang tidak terdefinisi oleh grid-template-rows dan grid-template-columns*/
+            /*grid-auto-rows: 200px;*/
+            grid-auto-columns: 150px;
+
+
+            /*fungsinya sama seperti flex-direction*/
+            grid-auto-flow: column;
         }
 
         .item {

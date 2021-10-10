@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Template Area</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #ddd;
+        }
+
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            display: grid;
+            grid-template-areas:
+                "header header header"
+                "sidebar content content"
+                "sidebar content content"
+                "footer footer footer";
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+
+        .container>* {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 0;
+        }
+
+        .item:nth-child(even) {
+            background-color: rgb(22, 61, 235);
+        }
+
+        .sidebar {
+            grid-area: sidebar;
+            background-color: rgb(250, 15, 250);
+        }
+
+        .content {
+            grid-area: content;
+            background-color: rgb(15, 58, 250);
+        }
+
+        header {
+            grid-area: header;
+            background-color: rgb(15, 250, 199);
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: rgb(128, 141, 138);
+        }
+
+        .content {
+            grid-area: content;
+            background-color: rgb(250, 215, 15);
+        }
+
+
+        @media(max-width: 600px) {
+            .container {
+                grid-template-areas:
+                    "header header header"
+                    "sidebar sidebar sidebar"
+                    "content content content"
+                    "footer footer footer";
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>header</header>
+        <div class="sidebar">sidebar</div>
+        <div class="content">content</div>
+        <footer>footer</footer>
+    </div>
+
+
+</body>
+
+</html>
